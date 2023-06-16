@@ -63,9 +63,19 @@ nums.forEach((btn)=>{
             
        
 function calVal(){
+    let opt = "";
+    let fNum = "";
+    let secNum = "";
     for(let letter of inputBox.value){
-        console.log(letter);
+        if(isNaN(letter)){
+            opt = letter;
+        }else{
+            fNum += letter;
+        }
     }
+    
+    console.log(fNum);
+    console.log(opt);
 }
     
 
