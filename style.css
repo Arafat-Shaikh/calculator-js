@@ -8,6 +8,10 @@ body{
     font-family: "Poppins",sans-serif;
 }
 
+::selection{
+    color: #E1AEFF;
+    background-color: #2F0F5D;
+}
 
 .wrapper{
     width: 280px;
