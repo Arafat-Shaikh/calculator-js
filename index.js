@@ -25,30 +25,27 @@ nums.forEach((btn)=>{
 
                 if(operMatch){
                    if(btnVal == inputLastVal){
-                        console.log(btnVal);
-                        console.log(inputLastVal);
                         inputBlock = true;
                    }
                    else{
-                    let tempInput = inputBox.value;
-                    tempInput.slice(0,-1);
-                    inputBox.value = tempInput;
+                    let tempStr = inputBox.value;
+                    let modStr = tempStr.substring(0,tempStr.length - 1);
+                    inputBox.value = modStr;
                    }
                 }
-
-
             }
 
             if(!inputBlock){
                 inputBox.value += btnVal;
             }
-            
+
         }
-
-
-            
-       
-     
+         
+        if(btnVal == "="){
+            if(inputBox.value){
+                calVal();
+            }
+         }   
 
         //clear the text one by one
         if(btnVal == "←"){
@@ -58,10 +55,17 @@ nums.forEach((btn)=>{
             if(inputBox.value == ""){
                 inputBox.value = "0";
             }
-            console.log(inputBox.value);
         }
-    
+
     })
         
 })
+            
+       
+function calVal(){
+    for(let letter of inputBox.value){
+        console.log(letter);
+    }
+}
+    
 
