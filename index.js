@@ -57,6 +57,10 @@ nums.forEach((btn)=>{
             }
         }
 
+        if(btnVal == "C"){
+            inputBox.value = "";
+        }
+   
     })
         
 })
@@ -66,16 +70,29 @@ function calVal(){
     let opt = "";
     let fNum = "";
     let secNum = "";
-    for(let letter of inputBox.value){
-        if(isNaN(letter)){
-            opt = letter;
-        }else{
-            fNum += letter;
+    let second = false;
+    let first = true;
+
+    for(let num of inputBox.value){
+        if(second){
+            secNum += num
         }
+        if(isNaN(num)){
+            opt = num;
+            second = true;
+            first = false;
+        }
+        if(first){
+            fNum += num;
+        }
+    
     }
     
-    console.log(fNum);
-    console.log(opt);
+    
+   
+    let result = eval(fNum + opt + secNum);
+    
+    inputBox.value = result;
 }
     
 
